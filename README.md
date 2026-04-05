@@ -8,9 +8,9 @@ Unlike standard LLM scripts that lose all progress if an API call fails, this sy
 
 The workflow executes a 4-step competitive analysis task:
 1. **Research Competitor:** Uses Groq API to gather intelligence.
-2. **Extract Pricing:** Forces Grok to output strict, validated JSON.
+2. **Extract Pricing:** Forces Groq to output strict, validated JSON.
 3. **Compare to DB:** A deterministic Python node that compares extracted data against internal data.
-4. **Draft Strategy:** Grok drafts a final report based on the delta.
+4. **Draft Strategy:** Groq drafts a final report based on the delta.
 
 ### The Stack
 * **Orchestration:** [LangGraph](https://python.langchain.com/v0.1/docs/langgraph/) (State-machine framework)
@@ -34,7 +34,9 @@ cd resilient-agent-workflow
 ```
 
 ### 2. Install Dependancies
+```bash
 pip install -r requirements.txt
+```
 
 ### 3.Environment Variables
 check the .env file.
@@ -48,5 +50,6 @@ uvicorn app.main:app --reload
 To verify the accuracy of the agent's final report against the raw research context:
 ```bash
 deepeval test run tests/test_agent.py
+```
 ```
 

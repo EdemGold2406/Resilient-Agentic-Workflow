@@ -31,6 +31,7 @@ The workflow executes a 4-step competitive analysis task:
 ```bash
 git clone https://github.com/yourusername/resilient-agent-workflow.git
 cd resilient-agent-workflow
+```
 
 ### 2. Install Dependancies
 pip install -r requirements.txt
@@ -41,8 +42,10 @@ check the .env file.
 ### 4. Run the API (Local)
 ```bash
 uvicorn app.main:app --reload
+```
 
 ### 5. Running the DeepEval Test Suite
 To verify the accuracy of the agent's final report against the raw research context:
 ```bash
 deepeval test run tests/test_agent.py
+```

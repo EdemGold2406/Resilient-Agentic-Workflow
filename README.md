@@ -7,14 +7,14 @@ Unlike standard LLM scripts that lose all progress if an API call fails, this sy
 ## 🏗 Architecture
 
 The workflow executes a 4-step competitive analysis task:
-1. **Research Competitor:** Uses Grok API to gather intelligence.
+1. **Research Competitor:** Uses Groq API to gather intelligence.
 2. **Extract Pricing:** Forces Grok to output strict, validated JSON.
 3. **Compare to DB:** A deterministic Python node that compares extracted data against internal data.
 4. **Draft Strategy:** Grok drafts a final report based on the delta.
 
 ### The Stack
 * **Orchestration:** [LangGraph](https://python.langchain.com/v0.1/docs/langgraph/) (State-machine framework)
-* **LLM:** [Grok Cloud API ](https://console.groq.com/docs/overview)
+* **LLM:** [Groq Cloud API ](https://console.groq.com/docs/overview)
 * **State Persistence:** [Supabase](https://supabase.com/) (using LangGraph's `PostgresSaver`)
 * **Evaluation:** [DeepEval](https://github.com/confident-ai/deepeval) (LLM-as-a-judge for Faithfulness and Relevance)
 * **Deployment:** FastAPI hosted on Render

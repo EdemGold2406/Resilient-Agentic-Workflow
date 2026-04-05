@@ -1,4 +1,4 @@
-# Resilient Agentic Workflow (Grok + LangGraph + Supabase)
+# Resilient Agentic Workflow (Groq + LangGraph + Supabase)
 
 An enterprise-grade, long-running AI agent that performs complex multi-step tasks with **checkpointing** and **quantitative evaluation**. 
 

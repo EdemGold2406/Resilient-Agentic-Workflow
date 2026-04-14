@@ -51,6 +51,9 @@ To verify the accuracy of the agent's final report against the raw research cont
 ```bash
 deepeval test run tests/test_agent.py
 ```
-```
 
-project docs: https://resilient-agentic-workflow.onrender.com/docs
+
+project docs: 
+```bash
+https://resilient-agentic-workflow.onrender.com/docs
+```

@@ -9,7 +9,6 @@ llm = ChatGroq(api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.3-70b-vers
 # 1. Node Functions
 def research_node(state: AgentState):
     print("--- STEP 1: RESEARCHING ---")
-    # Simulate research (In production, replace with Tavily Search)
     return {"research_data": f"Competitor {state['competitor']} offers pricing at $99/mo."}
 
 def extract_node(state: AgentState):
@@ -18,7 +17,6 @@ def extract_node(state: AgentState):
 
 def compare_node(state: AgentState):
     print("--- STEP 3: COMPARING ---")
-    # Simulate DB comparison
     return {"comparison_result": "Competitor is $10 cheaper than our base plan."}
 
 def draft_node(state: AgentState):
@@ -40,4 +38,5 @@ workflow.add_edge("compare", "draft")
 workflow.add_edge("draft", END)
 
 # 3. Compile with Checkpointer
+# The app object here is what we run
 app = workflow.compile(checkpointer=checkpointer)
